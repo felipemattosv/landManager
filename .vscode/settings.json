@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "person.h": "c",
+        "date.h": "c",
+        "address.h": "c",
+        "terrain.h": "c",
+        "stdio.h": "c"
+    }
+}
