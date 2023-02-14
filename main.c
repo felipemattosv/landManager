@@ -1,23 +1,14 @@
 #include "ADTs/land.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 void menu_print();
-void menu_actions();
-
-#define EXIT 0
-#define REGISTER 1
-#define REMOVE 2
-#define LIST_ALL 3
-#define ORDER_AREA 4
-#define LIST_BROKER 5
-#define ORDER_CLEANING 6
-#define SEARCH_ADDRESS 7
-#define REPORT 8
+void menu_actions(Land);
 
 void main() {
 
     Land land = land_create();
+
+    initialize_menu_functions();
 
     menu_actions(land);
 
@@ -40,56 +31,16 @@ void menu_print() {
     printf("\n");
 }
 
-void menu_actions() {
+void menu_actions(Land l) {
 
     int op = -1;
 
-    while (op != EXIT) {
+    while (op) {
 
         menu_print();
         printf("Type the action: ");
         scanf("%d%*c", &op);
 
-        switch (op) {
-        
-            case EXIT:
-                break;
-
-            case REGISTER:
-            
-                break;
-
-            case REMOVE:
-            
-                break;
-
-            case LIST_ALL:
-                
-                break;
-
-            case ORDER_AREA:
-                
-                break;
-
-            case LIST_BROKER:
-                
-                break;
-
-            case ORDER_CLEANING:
-                
-                break;
-
-            case SEARCH_ADDRESS:
-                
-                break;
-
-            case REPORT:
-                
-                break;                            
-            
-            default:
-                printf("Invalid action!\n");
-                break;
-        }
+        executeFunction(op, l);
     }
 }

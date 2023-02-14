@@ -1,6 +1,7 @@
 #include "land.h"
 #include "terrain.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct land {
 
@@ -41,4 +42,65 @@ void land_destroy(Land l) {
 
     free(l->land);
     free(l);
+}
+
+functionality menu_functions[9];
+
+
+void Exit(Land l) {
+
+    printf("Closing program...\n");
+}
+
+void Register(Land l) {
+
+}
+
+void Remove(Land l) {
+
+}
+
+void ListAll(Land l) {
+
+}
+
+void OrderArea(Land l) {
+
+}
+
+void ListByBroker(Land l) {
+
+}
+
+void OrderCleaning(Land l) {
+
+}
+
+void SearchAddress(Land l) {
+
+}
+
+void Report(Land l) {
+
+}
+
+void initialize_menu_functions() {
+
+    menu_functions[0] = Exit;
+    menu_functions[1] = Register;
+    menu_functions[2] = Remove;
+    menu_functions[3] = ListAll;
+    menu_functions[4] = OrderArea;
+    menu_functions[5] = ListByBroker;
+    menu_functions[6] = OrderCleaning;
+    menu_functions[7] = SearchAddress;
+    menu_functions[8] = Report;
+}
+
+void executeFunction(int action, Land l) {
+
+    if (menu_functions[action] != NULL)
+        menu_functions[action](l);
+    else
+        printf("Action invalid!\n");
 }

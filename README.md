@@ -11,6 +11,7 @@ This project summarizes (in a simple and short way) what I learned about C progr
 ### - File manipulation
 ### - Vector sorting using qsort()
 ### - Binary search using bsearch()
+### - Dispatch tables
 
 ## Exercise:
 ### Make a land management program
