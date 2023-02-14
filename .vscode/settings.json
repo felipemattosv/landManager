@@ -4,6 +4,8 @@
         "date.h": "c",
         "address.h": "c",
         "terrain.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "land.h": "c"
     }
 }

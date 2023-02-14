@@ -1,8 +1,12 @@
-#include "ADTs/terrain.h"
+#include "ADTs/land.h"
+#include <stdlib.h>
 
 int main() {
 
-    
+    Land land = land_create();
 
-    return 0;
+
+    land_destroy(land);
+
+    return EXIT_SUCCESS;
 }

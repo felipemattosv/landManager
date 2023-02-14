@@ -1,5 +1,5 @@
 all:
-	gcc -o main main.c ADTs/terrain.c ADTs/address.c ADTs/person.c ADTs/date.c
+	gcc -o main main.c ADTs/land.c ADTs/terrain.c ADTs/address.c ADTs/person.c ADTs/date.c
 
 run:
 	./main
