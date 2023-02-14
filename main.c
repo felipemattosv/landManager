@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void menu_print();
-void menu_actions(Land);
+Land menu_actions(Land);
 
 void main() {
 
@@ -10,7 +10,7 @@ void main() {
 
     initialize_menu_functions();
 
-    menu_actions(land);
+    land = menu_actions(land);
 
     land_destroy(land);
 }
@@ -31,16 +31,18 @@ void menu_print() {
     printf("\n");
 }
 
-void menu_actions(Land l) {
+Land menu_actions(Land l) {
 
-    int op = -1;
+    int action = -1;
 
-    while (op) {
+    while (action) {
 
         menu_print();
         printf("Type the action: ");
-        scanf("%d%*c", &op);
+        scanf("%d%*c", &action);
 
-        executeFunction(op, l);
+        l = executeFunction(action, l);
     }
+
+    return l;
 }

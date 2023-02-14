@@ -3,6 +3,7 @@
 #include "date.h"
 #include "address.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct terrain {
 
@@ -29,4 +30,24 @@ void terrain_destroy(Terrain t) {
     date_destroy(t->lastCleaning);
     address_destroy(t->address);
     free(t);
+}
+
+void terrain_set(Terrain t) {
+
+    printf("Type owner's information:\n");
+    person_set(t->owner);
+
+    printf("Type date of last cleaning:\n");
+    date_set(t->lastCleaning);
+
+    printf("Type terrain's address:\n");
+    address_set(t->address);
+
+    printf("Type terrain's area: ");
+    scanf("%f%*c", &t->area);
+
+    printf("Type terrain's associated broker: ");
+    scanf("%[^\n]", t->broker);
+
+    printf("Terrain registred!\n\n");
 }

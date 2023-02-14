@@ -1,12 +1,13 @@
 #include "address.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 struct address {
 
-    char street[64];
     char state[3];
+    char street[64];
     int number;
-    int zipCode[5];
+    int zipCode;
 };
 
 Address address_create() {
@@ -17,4 +18,19 @@ Address address_create() {
 void address_destroy(Address a) {
 
     free(a);
+}
+
+void address_set(Address a) {
+
+    printf("State postal abreviattion: ");
+    scanf("%s%*c", a->state);
+
+    printf("Street: ");
+    scanf("%[^\n]", a->street);
+
+    printf("Number: ");
+    scanf("%d", &a->number);
+
+    printf("ZIP code: ");
+    scanf("%d", &a->zipCode);
 }

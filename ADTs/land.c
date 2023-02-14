@@ -47,41 +47,65 @@ void land_destroy(Land l) {
 functionality menu_functions[9];
 
 
-void Exit(Land l) {
+Land Exit(Land l) {
 
     printf("Closing program...\n");
+
+    return l;
 }
 
-void Register(Land l) {
+Land Register(Land l) {
 
+    if (l->land_used == l->land_alloc)
+        l = land_realloc(l);
+    
+    terrain_set(l->land[l->land_used]);
+
+    l->land_used++;
+
+    return l;
 }
 
-void Remove(Land l) {
+Land Remove(Land l) {
 
+
+    return l;
 }
 
-void ListAll(Land l) {
+Land ListAll(Land l) {
 
+
+    return l;
 }
 
-void OrderArea(Land l) {
+Land OrderArea(Land l) {
 
+
+    return l;
 }
 
-void ListByBroker(Land l) {
+Land ListByBroker(Land l) {
 
+
+    return l;
 }
 
-void OrderCleaning(Land l) {
+Land OrderCleaning(Land l) {
 
+
+    return l;
 }
 
-void SearchAddress(Land l) {
+Land SearchAddress(Land l) {
 
+
+    return l;
 }
 
-void Report(Land l) {
+Land Report(Land l) {
 
+
+    return l;
 }
 
 void initialize_menu_functions() {
@@ -97,10 +121,10 @@ void initialize_menu_functions() {
     menu_functions[8] = Report;
 }
 
-void executeFunction(int action, Land l) {
+Land executeFunction(int action, Land l) {
 
     if (menu_functions[action] != NULL)
-        menu_functions[action](l);
+        return menu_functions[action](l);
     else
         printf("Action invalid!\n");
 }
