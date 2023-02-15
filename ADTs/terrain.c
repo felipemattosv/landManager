@@ -85,3 +85,8 @@ int terrain_compareArea(const void *p1, const void *p2) {
     else if (t1->area > t2->area) return -1;
     else return 0;
 }
+
+char * terrain_getBroker(Terrain t) {
+
+    return t->broker;
+}

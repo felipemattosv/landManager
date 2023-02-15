@@ -6,6 +6,7 @@
         "terrain.h": "c",
         "stdio.h": "c",
         "stdlib.h": "c",
-        "land.h": "c"
+        "land.h": "c",
+        "string.h": "c"
     }
 }

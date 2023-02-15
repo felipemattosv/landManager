@@ -3,6 +3,7 @@
 #include "address.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 struct land {
 
@@ -117,7 +118,17 @@ Land OrderArea(Land l) {
 
 Land ListByBroker(Land l) {
 
+    char target[64];
+    printf("Search terrains associated to: ");
+    scanf("%[^\n]", target);
 
+    for(int i=0; i < l->land_used; i++)
+        if (strcmp(target, terrain_getBroker(l->land[i])) == 0) {
+            
+            terrain_print(l->land[i]);
+            printf("\n");
+        }
+    
     return l;
 }
 
