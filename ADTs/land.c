@@ -165,6 +165,17 @@ Land SearchAddress(Land l) {
 
 Land Report(Land l) {
 
+    FILE * log = fopen("log.txt", "w");
+
+    fprintf(log, "Amount of land: %d\n\n", l->land_used);
+
+    for (int i=0; i < l->land_used; i++) {
+
+        terrain_fprint(l->land[i], log);
+        fprintf(log, "\n");
+    }
+
+    fclose(log);
 
     return l;
 }

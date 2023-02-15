@@ -1,6 +1,7 @@
 #pragma once
 
 #include "address.h"
+#include <stdio.h>
 
 typedef struct terrain * Terrain;
 
@@ -17,6 +18,7 @@ char * terrain_getBroker(Terrain);
 
 //Print functions:
 void terrain_print(Terrain);
+void terrain_fprint(Terrain, FILE *);
 
 //Compare functions:
 int terrain_compareArea(const void *, const void *);

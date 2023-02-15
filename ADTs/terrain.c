@@ -98,3 +98,22 @@ int terrain_compareDate(const void *p1, const void *p2) {
 
     return date_compare(t1->lastCleaning, t2->lastCleaning);    
 }
+
+void terrain_fprint(Terrain t, FILE * f) {
+
+    fprintf(f, "Owner:\n");
+    person_fprint(t->owner, f);
+    fprintf(f, "\n");
+
+    fprintf(f, "Last cleaning: ");
+    date_fprint(t->lastCleaning, f);
+    fprintf(f, "\n");
+
+    fprintf(f, "Address: ");
+    address_fprint(t->address, f);
+    fprintf(f, "\n");
+
+    fprintf(f, "Area: %.2f\n", t->area);
+
+    fprintf(f, "Associated broker: %s\n", t->broker);
+}

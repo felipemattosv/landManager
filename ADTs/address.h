@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdio.h>
+
 typedef struct address * Address;
 
 //Memory functions:
@@ -14,3 +16,4 @@ int address_compare(Address, Address);
 
 //Print functions:
 void address_print(Address);
+void address_fprint(Address, FILE *);

@@ -48,3 +48,12 @@ void person_print(Person p) {
     printf(" Birth: ");
     date_print(p->birth);
 }
+
+void person_fprint(Person p, FILE * f) {
+
+    fprintf(f, "Name: %s |", p->name);
+    fprintf(f, " ID: %d |", p->id);
+    fprintf(f, " Sex: %c |", p->sex);
+    fprintf(f, " Birth: ");
+    date_fprint(p->birth, f);
+}

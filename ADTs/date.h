@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdio.h>
+
 typedef struct date * Date;
 
 //Memory functions:
@@ -11,6 +13,7 @@ void date_set(Date);
 
 //Printf functions:
 void date_print(Date);
+void date_fprint(Date, FILE *);
 
 //Compare functions:
 int date_compare(Date, Date);

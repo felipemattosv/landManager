@@ -72,3 +72,8 @@ int date_compare(Date d1, Date d2) {
         }
     }
 }
+
+void date_fprint(Date d, FILE * f) {
+
+    fprintf(f, "%d/%d/%d", d->month, d->day, d->year);
+}

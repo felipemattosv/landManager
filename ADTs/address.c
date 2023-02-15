@@ -47,3 +47,8 @@ void address_print(Address a) {
 
     printf("%s n.%d, %s %d", a->street, a->number, a->state, a->zipCode);
 }
+
+void address_fprint(Address a, FILE * f) {
+
+    fprintf(f, "%s n.%d, %s %d", a->street, a->number, a->state, a->zipCode);
+}
