@@ -1,6 +1,7 @@
 #include "address.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 struct address {
 
@@ -33,4 +34,11 @@ void address_set(Address a) {
 
     printf("ZIP code: ");
     scanf("%d", &a->zipCode);
+}
+
+int address_compare(Address a, Address b) {
+
+    if (strcmp(a->state, b->state)==0 && strcmp(a->street, b->street)==0 && a->number == b->number) return 1;
+    
+    else return 0;
 }

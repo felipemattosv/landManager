@@ -8,3 +8,6 @@ void address_destroy(Address);
 
 //Set functions:
 void address_set(Address);
+
+//Compare functions:
+int address_compare(Address, Address);

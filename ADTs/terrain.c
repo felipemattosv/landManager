@@ -51,3 +51,8 @@ void terrain_set(Terrain t) {
 
     printf("Terrain registred!\n\n");
 }
+
+Address terrain_getAddres(Terrain t) {
+
+    return t->address;
+}

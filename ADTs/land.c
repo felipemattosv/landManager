@@ -1,5 +1,6 @@
 #include "land.h"
 #include "terrain.h"
+#include "address.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -37,7 +38,7 @@ Land land_realloc(Land l) {
 
 void land_destroy(Land l) {
 
-    for (int i=0; i < l->land_alloc; i++)
+    for (int i=0; i < l->land_alloc - 1; i++)
         terrain_destroy(l->land[i]);
 
     free(l->land);
@@ -68,6 +69,29 @@ Land Register(Land l) {
 
 Land Remove(Land l) {
 
+    Address target = address_create();
+
+    printf("Type the address of the terrain that will be removed:\n");
+    address_set(target);
+
+    int indexOnArray = -1;
+
+    for(int i=0; i < l->land_used; i++)
+        if (address_compare(terrain_getAddres(l->land[i]), target))
+            indexOnArray = i;
+
+    if (indexOnArray != -1) {
+
+        terrain_destroy(l->land[indexOnArray]);
+
+        for (int i = indexOnArray; i < l->land_alloc - 1; i++)
+            l->land[i] = l->land[i + 1];
+
+        l->land_used--;
+    }
+    else printf("Terrain not found at the address entered!\n\n");
+
+    address_destroy(target);
 
     return l;
 }
