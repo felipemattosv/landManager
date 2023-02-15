@@ -6,3 +6,9 @@ run:
 
 clean:
 	rm main
+
+valgrind:
+	valgrind ./main
+
+gdb:
+	gdb ./main
