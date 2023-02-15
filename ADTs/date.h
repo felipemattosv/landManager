@@ -11,3 +11,6 @@ void date_set(Date);
 
 //Printf functions:
 void date_print(Date);
+
+//Compare functions:
+int date_compare(Date, Date);

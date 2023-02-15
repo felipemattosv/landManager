@@ -90,3 +90,11 @@ char * terrain_getBroker(Terrain t) {
 
     return t->broker;
 }
+
+int terrain_compareDate(const void *p1, const void *p2) {
+
+    Terrain t1 = *(Terrain *)p1;
+    Terrain t2 = *(Terrain *)p2;
+
+    return date_compare(t1->lastCleaning, t2->lastCleaning);    
+}

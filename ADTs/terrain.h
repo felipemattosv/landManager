@@ -20,3 +20,4 @@ void terrain_print(Terrain);
 
 //Compare functions:
 int terrain_compareArea(const void *, const void *);
+int terrain_compareDate(const void *, const void *);

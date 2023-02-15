@@ -134,6 +134,7 @@ Land ListByBroker(Land l) {
 
 Land OrderCleaning(Land l) {
 
+    qsort(l->land, l->land_used, sizeof(Terrain), terrain_compareDate);
 
     return l;
 }
