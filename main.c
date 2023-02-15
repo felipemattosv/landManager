@@ -28,6 +28,7 @@ void menu_print() {
     printf("6 - Order land by date of last cleaning\n");
     printf("7 - Search for terrain by address\n");
     printf("8 - Generate land report\n");
+    printf("9 - Search terrain by registration number\n");
     printf("\n");
 }
 

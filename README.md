@@ -32,3 +32,4 @@ This project summarizes (in a simple and short way) what I learned about C progr
 - 6: ORDER BY DATE OF LAST CLEANING (From dirtiest to cleanest)
 - 7: SEARCH FOR LAND BY ADDRESS
 - 8: GENERATE LAND REPORT
+- 9: SEARCH FOR TERRAIN BY REGISTRATION NUMBER

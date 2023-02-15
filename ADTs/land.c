@@ -46,7 +46,7 @@ void land_destroy(Land l) {
     free(l);
 }
 
-functionality menu_functions[9];
+functionality menu_functions[10];
 
 
 Land Exit(Land l) {
@@ -180,6 +180,33 @@ Land Report(Land l) {
     return l;
 }
 
+Land SearchByRegistrationNum(Land l) {
+
+    int RN;
+    printf("Type the Registration Number: ");
+    scanf("%d", &RN);
+
+    Terrain key = terrain_create();
+    terrain_setRegNum(key, RN);
+
+    qsort(l->land, l->land_used, sizeof(Terrain), terrain_compareRegNum);
+
+    Terrain * result = (Terrain *)bsearch(&key, l->land, l->land_used, sizeof(Terrain), terrain_compareRegNum);
+
+    if (result == NULL)
+        printf("Terrain not found!\n");
+    else {
+
+        int indexOnArray = l->land - result;
+
+        terrain_print(l->land[indexOnArray]);
+    }
+
+    terrain_destroy(key);
+
+    return l;
+}
+
 void initialize_menu_functions() {
 
     menu_functions[0] = Exit;
@@ -191,6 +218,7 @@ void initialize_menu_functions() {
     menu_functions[6] = OrderCleaning;
     menu_functions[7] = SearchAddress;
     menu_functions[8] = Report;
+    menu_functions[9] = SearchByRegistrationNum;
 }
 
 Land executeFunction(int action, Land l) {

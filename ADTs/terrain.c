@@ -12,6 +12,7 @@ struct terrain {
     Address address;
     float area;
     char broker[64];
+    int registrationNumber;
 };
 
 Terrain terrain_create() {
@@ -49,6 +50,9 @@ void terrain_set(Terrain t) {
     printf("Type terrain's associated broker: ");
     scanf("%[^\n]", t->broker);
 
+    printf("Type terrain's registration number: ");
+    scanf("%d%*c", &t->registrationNumber);
+
     printf("Terrain registred!\n\n");
 }
 
@@ -74,6 +78,10 @@ void terrain_print(Terrain t) {
     printf("Area: %.2f\n", t->area);
 
     printf("Associated broker: %s\n", t->broker);
+
+    printf("Registration number: %d\n", t->registrationNumber);
+
+    printf("\n");
 }
 
 int terrain_compareArea(const void *p1, const void *p2) {
@@ -116,4 +124,19 @@ void terrain_fprint(Terrain t, FILE * f) {
     fprintf(f, "Area: %.2f\n", t->area);
 
     fprintf(f, "Associated broker: %s\n", t->broker);
+
+    fprintf(f, "Registration number: %d\n", t->registrationNumber);
+}
+
+void terrain_setRegNum(Terrain t, int RN) {
+
+    t->registrationNumber = RN;
+}
+
+int terrain_compareRegNum(const void *p1, const void *p2) {
+
+    Terrain t1 = *(Terrain *)p1;
+    Terrain t2 = *(Terrain *)p2;
+
+    return (t1->registrationNumber - t2->registrationNumber);
 }
