@@ -141,6 +141,24 @@ Land OrderCleaning(Land l) {
 
 Land SearchAddress(Land l) {
 
+    Address target = address_create();
+
+    printf("Type the address of the terrain:\n");
+    address_set(target);
+    printf("\n");
+
+    int i;
+
+    for(i=0; i < l->land_used; i++)
+        if (address_compare(terrain_getAddres(l->land[i]), target)) {
+        
+            terrain_print(l->land[i]);
+            break;
+        }
+
+    if (i == l->land_used) printf("Terrain not found!\n");
+
+    address_destroy(target);
 
     return l;
 }
