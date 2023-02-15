@@ -16,3 +16,6 @@ Address terrain_getAddres(Terrain);
 
 //Print functions:
 void terrain_print(Terrain);
+
+//Compare functions:
+int terrain_compareArea(const void *, const void *);

@@ -109,6 +109,7 @@ Land ListAll(Land l) {
 
 Land OrderArea(Land l) {
 
+    qsort(l->land, l->land_used, sizeof(Terrain), terrain_compareArea);
 
     return l;
 }

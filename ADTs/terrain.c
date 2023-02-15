@@ -75,3 +75,13 @@ void terrain_print(Terrain t) {
 
     printf("Associated broker: %s\n", t->broker);
 }
+
+int terrain_compareArea(const void *p1, const void *p2) {
+
+    Terrain t1 = *(Terrain *)p1;
+    Terrain t2 = *(Terrain *)p2;
+
+    if (t2->area > t1->area) return 1;
+    else if (t1->area > t2->area) return -1;
+    else return 0;
+}
