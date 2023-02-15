@@ -56,3 +56,22 @@ Address terrain_getAddres(Terrain t) {
 
     return t->address;
 }
+
+void terrain_print(Terrain t) {
+
+    printf("Owner:\n");
+    person_print(t->owner);
+    printf("\n");
+
+    printf("Last cleaning: ");
+    date_print(t->lastCleaning);
+    printf("\n");
+
+    printf("Address: ");
+    address_print(t->address);
+    printf("\n");
+
+    printf("Area: %.2f\n", t->area);
+
+    printf("Associated broker: %s\n", t->broker);
+}

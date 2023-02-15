@@ -39,3 +39,12 @@ void person_set(Person p) {
     printf("Date of birth:\n");
     date_set(p->birth);
 }
+
+void person_print(Person p) {
+
+    printf("Name: %s |", p->name);
+    printf(" ID: %d |", p->id);
+    printf(" Sex: %c |", p->sex);
+    printf(" Birth: ");
+    date_print(p->birth);
+}

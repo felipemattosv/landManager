@@ -30,3 +30,8 @@ void date_set(Date d) {
     printf("Year: ");
     scanf("%d", &d->year);
 }
+
+void date_print(Date d) {
+
+    printf("%d/%d/%d", d->month, d->day, d->year);
+}

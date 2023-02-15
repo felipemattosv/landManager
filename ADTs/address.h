@@ -11,3 +11,6 @@ void address_set(Address);
 
 //Compare functions:
 int address_compare(Address, Address);
+
+//Print functions:
+void address_print(Address);

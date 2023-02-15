@@ -13,3 +13,6 @@ void terrain_set(Terrain);
 
 //Get functions:
 Address terrain_getAddres(Terrain);
+
+//Print functions:
+void terrain_print(Terrain);

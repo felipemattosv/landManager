@@ -42,3 +42,8 @@ int address_compare(Address a, Address b) {
     
     else return 0;
 }
+
+void address_print(Address a) {
+
+    printf("%s n.%d, %s %d", a->street, a->number, a->state, a->zipCode);
+}

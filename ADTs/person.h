@@ -8,3 +8,6 @@ void person_destroy(Person);
 
 //Set functions:
 void person_set(Person);
+
+//Print functions:
+void person_print(Person);

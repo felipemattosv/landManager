@@ -98,6 +98,11 @@ Land Remove(Land l) {
 
 Land ListAll(Land l) {
 
+    for (int i=0; i < l->land_used; i++) {
+        
+        terrain_print(l->land[i]);
+        printf("\n");
+    }
 
     return l;
 }

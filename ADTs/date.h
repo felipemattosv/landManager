@@ -8,3 +8,6 @@ void date_destroy(Date);
 
 //Set functions:
 void date_set(Date);
+
+//Printf functions:
+void date_print(Date);
